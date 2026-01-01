@@ -1,15 +1,11 @@
 #imports for functions:
 import datetime #using for the time/day function.
 import pyttsx3 #python text-to-speech.
-#import sqlite3 #needed to store database.
-
-#sqlite setup:
-#con = sqlite3.connect("vending_machine_stock.db")
 
 #text-to-speech setup
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[1].id)
+engine.setProperty('voice', voices[0].id)
 
 
 def speak(text):
@@ -23,17 +19,23 @@ def greet_user():
     if hour < 12:
         print("\nGood morning fam!")
         print("\nWelcome to my vending machine Chief!")
+        speak("\nWelcome to my vending machine Chief!")
         print("What can bossman get you?")
+        speak("What can bossman get you?")
         speak("Good morning fam.")
     elif hour < 18:
         print("\nGood afternoon cuz!")
         print("\nWelcome to my vending machine Chief!")
+        speak("\nWelcome to my vending machine Chief!")
         print("What can bossman get you?")
+        speak("What can bossman get you?")
         speak("Good afternoon cuz.")
     else:
         print("\nNice evening we got fam!")
         print("\nWelcome to my vending machine Chief!")
+        speak("\nWelcome to my vending machine Chief!")
         print("What can bossman get you?")
+        speak("What can bossman get you?")
         speak("Nice evening we got fam.")
     speak("What can i get you chief?")
 
@@ -205,13 +207,17 @@ def main_loop():
             again = input("\nWould you like to purchase again? (Y/N): ").upper()
             if again != "Y":
                 print("See you next time cuz!")
+                speak("thanks for stopping by fam!")
+                
                 print(
                 "\n========================================="
                         "\nTHANKS FOR STOPPING BY FAM!"
                         "\nCOME BACK SOON, YEAH?"
                 "\n========================================="
                 )
-
+                
+                speak("come back soon, yeah?")
+                
                 break
             
 #AND FOR THE GRAND FINALE!!!:
