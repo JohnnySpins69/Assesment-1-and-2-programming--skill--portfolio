@@ -119,6 +119,12 @@ def get_choice():
         exit()
 
     if choice in products: #if choice is in the products "Dont forget!".
+        
+        #almost forgot this crap:
+        if products[choice]["stock"] <= 0: #if no more stock part.
+            print("We dont have the stock for that, sorry chief.")
+            return None
+    
         item = products[choice]
         print(f"\nYou have selected {item['item']}, for the low price of = {item['price']} AED.")
         speak(f"You have selected {item['item']}. for the low price of {item['price']} dirhams.")
