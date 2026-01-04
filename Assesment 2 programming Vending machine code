@@ -101,7 +101,7 @@ def suggest_pairing(code):
             print("\n purchasing first item only (Touche)...")
             return None
     
-        if choice in recommended or choice in products:
+        if choice in recommended:
             print(f"\nGood choice fam, Adding {choice} to your purchase.")
             return choice
     else:
@@ -197,6 +197,7 @@ def main_loop():
             elif money < total_sum:
                 print("\nNot enough dosh bruv (Money).")
                 speak("Not enough dosh bruv.")
+                continue #so stock doesnt get lost/prevents receipt
             else:
                 change = money - total_sum
                 print("Payment accepted. Nice!")
